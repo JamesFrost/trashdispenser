@@ -1,0 +1,28 @@
+{
+  "name": "trashdispenser",
+  "version": "0.0.1",
+  "description": "Quickly mock server responses",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "James Frost <hello@jamesfrost.me> (http://jamesfrost.me)",
+  "license": "MIT",
+  "dependencies": {
+    "cwd": "0.10.0",
+    "restify": "4.1.1",
+    "update-notifier": "1.0.2"
+  },
+   "bin": {
+    "trashdispenser": "bin/trashdispenser.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JamesFrost/trashdispenser"
+  },
+  "keywords": [
+    "mock",
+    "server",
+    "response"
+  ]
+}
