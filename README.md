@@ -4,6 +4,7 @@ Quickly create a server to mock responses :poop:
 ```bash
 npm install -g trashdispenser
 ```
+Built using <a href="https://www.npmjs.com/package/restify">Restify</a>.
 ## Usage
 ### Command Line
 ```bash
