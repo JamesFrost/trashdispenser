@@ -39,7 +39,12 @@ const _addEndpoints = function( server, endPoints )
 
 	const thisEndPoint = endPoints[ 0 ];
 
-	server[ thisEndPoint.method ]( thisEndPoint.uri, _curryRandomResponse( thisEndPoint.data ) );
+	if( typeof thisEndPoint.data === "function" )
+		server[ thisEndPoint.method ]( thisEndPoint.uri, thisEndPoint.data );
+	else
+		server[ thisEndPoint.method ]( thisEndPoint.uri, _curryRandomResponse( thisEndPoint.data ) );
+
+	_addEndpoints( server, endPoints.slice( 1 ) );
 };
 
 const _curryRandomResponse = function( data )
