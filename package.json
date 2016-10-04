@@ -1,6 +1,6 @@
 {
   "name": "trashdispenser",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Quickly mock server responses",
   "main": "index.js",
   "scripts": {
