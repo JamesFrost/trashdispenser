@@ -23,6 +23,7 @@ trashdispenser.dispense( config, function( server ) // callback optional
 ## Config
 ```json
 {
+	"url" : "yourservers.url.com",
 	"port" : 8080,
 	"endPoints" :
 	[
@@ -48,6 +49,8 @@ trashdispenser.dispense( config, function( server ) // callback optional
 }
 ```
 Data returned from requests is chosen randomly from the data array.
+
+If url attribute is not set, will default to local host.
 
 ## License
 MIT
