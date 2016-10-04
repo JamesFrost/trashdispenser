@@ -14,11 +14,22 @@ exports.dispense = function( _config, callback )
 
 	_addEndpoints( _server, _config.endPoints );
 
-	_server.listen(_config.port, function () 
+	if( _config.url == undefined )
 	{
-	  	if( callback !== undefined )
-		  	callback( _server );
-	});
+		_server.listen(_config.port, function () 
+		{
+		  	if( callback !== undefined )
+			  	callback( _server );
+		});
+	}
+	else
+	{
+		_server.listen(_config.port, _config.url, function () 
+		{
+		  	if( callback !== undefined )
+			  	callback( _server );
+		});
+	}
 };
 
 const _addEndpoints = function( server, endPoints )
@@ -35,7 +46,13 @@ const _curryRandomResponse = function( data )
 {
 	return function (req, res, next) 
 	{
-		res.send( _getRandomResponse( data ) );
+		var text = '';
+		for (var i = 0; i <= 500; ++i) 
+		{
+			text += JSON.stringify( _getRandomResponse( data ) );
+		}
+
+		res.send( text );
 		return next();
 	};
 };
